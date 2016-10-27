@@ -17,7 +17,6 @@ dict_request = {}
 
 def parseHttpRequest():
     '''Separate HTTP request string into dictionary of {key: value}'''
-    global post_status
     form = cgi.FieldStorage()
     keys = form.keys()
 
