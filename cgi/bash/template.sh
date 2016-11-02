@@ -38,6 +38,8 @@ function parseHttpRequest
 	done
 }
 
+parseHttpRequest
+
 echo -en "Content-type: text/html\n\n"
 
 cat << EOF

@@ -145,6 +145,8 @@ int main(int argc, const char *argv[])
 
 	memset(&data, 0, sizeof(HttpRequestData));
 
+	parseHttpRequest(&data);
+
 	printf("Content-type: text/html\n\n");
 	printf("<!DOCTYPE html>");
 	printf("<html>");

@@ -29,23 +29,25 @@ def parseHttpRequest():
 	keys = form.keys()
 	dict_request = {key: cgi.escape(form.getvalue(key)) for key in keys}
 
+parseHttpRequest()
+
 print('Content-type: text/html')
 print()
 
-print('<!DOCTYPE html>')
-print('<html>')
 print('''
-<head>
-	<meta charset="UTF-8">
-	<title>MODIFY_HERE_1</title>
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="MODIFY_HERE_2">
-	<script type="text/javascript" src="MODIFY_HERE_3"></script>
-	<noscript>Not support javascript</noscript>
-</head>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>MODIFY_HERE_1</title>
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="MODIFY_HERE_2">
+		<script type="text/javascript" src="MODIFY_HERE_3"></script>
+		<noscript>Not support javascript</noscript>
+	</head>
+	<body>
+	</body>
+</html>
 ''')
-print('<body>')
-print('</body>')
-print('</html>')
