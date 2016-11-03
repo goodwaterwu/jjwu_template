@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
 
-import cgi
+from urllib import parse
 
 REMOTE_ADDR = None
 REQUEST_METHOD = None
@@ -18,13 +18,13 @@ def parseHttpRequest(environ):
 	REQUEST_METHOD = environ.get('REQUEST_METHOD')	
 
 	if REQUEST_METHOD == 'GET':
-		dict_request = cgi.parse_qs(environ.get('QUERY_STRING'))
+		dict_request = parse.parse_qs(environ.get('QUERY_STRING'))
 	elif REQUEST_METHOD == 'POST':
 		CONTENT_LENGTH = environ.get('CONTENT_LENGTH')
 		
 		if CONTENT_LENGTH != None:
 			query_string_length = int(CONTENT_LENGTH)
-			dict_request = cgi.parse_qs(environ.get('wsgi.input').read(query_string_length))
+			dict_request = {key.decode('utf-8'): [element.decode('utf-8') for element in value] for key, value in parse.parse_qs(environ.get('wsgi.input').read(query_string_length)).items()}
 	else:
 		pass
 
