@@ -41,7 +41,7 @@ libs:
 
 install:
 	$(shell echo $(DESTDIR) > .install)
-	install -d ${DESTDIR}/usr/local/sbin
+	install -d $(DESTDIR)/usr/local/sbin
 	install -m 755 $(EXECFILE) $(DESTDIR)/usr/local/sbin
 	$(info package installed)
 
