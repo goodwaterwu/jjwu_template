@@ -31,7 +31,10 @@ SUBDIRS = \
 	./message_queue/posix_message_queue_priority \
 	./message_queue/posix_message_queue_rw \
 	./daemon/daemon_posix_message_queue \
-	./syslog/syslog
+	./syslog/syslog \
+	./semaphore/semaphore_create \
+	./semaphore/semaphore_create_private \
+	./semaphore/semaphore_binary
 
 .PHONY: all
 
