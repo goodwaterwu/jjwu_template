@@ -1,13 +1,10 @@
-include Makefile.in
+include ../Makefile.in
 
 SUBDIRS = \
-	pthread \
-	signal \
-	timer \
-	message_queue \
-	daemon \
-	syslog \
-	semaphore
+	semaphore_create \
+	semaphore_create_private \
+	semaphore_binary \
+	semaphore_attribute
 
 .PHONY: all
 

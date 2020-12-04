@@ -1,13 +1,17 @@
-include Makefile.in
+include ../Makefile.in
 
 SUBDIRS = \
-	pthread \
-	signal \
-	timer \
-	message_queue \
-	daemon \
-	syslog \
-	semaphore
+	message_queue_create \
+	message_queue_create_private \
+	message_queue_msqid_ds \
+	message_queue_one_write_multi_read \
+	message_queue_priority \
+	message_queue_snd_rcv \
+	posix_message_queue_attribute \
+	posix_message_queue_notify_signal \
+	posix_message_queue_notify_thread \
+	posix_message_queue_priority \
+	posix_message_queue_rw
 
 .PHONY: all
 

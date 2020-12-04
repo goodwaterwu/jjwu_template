@@ -51,7 +51,7 @@ uninstall:
 	$(eval DESTDIR := $(shell cat .install))
 	@for f in $(EXECFILE); \
 	do \
-		rm -f $(DESTDIR)/usr/local/sbin/$$f; \
+		@rm -f $(DESTDIR)/usr/local/sbin/$$f; \
 	done
 	rm -f .install
 	$(info package uninstalled)
@@ -59,5 +59,5 @@ uninstall:
 .PHONY: clean
 
 clean:
-	@rm $(SEND_OBJS) $(RECV_OBJS) $(EXECFILE)
+	@rm -f $(SEND_OBJS) $(RECV_OBJS) $(EXECFILE)
 	$(info package cleaned)

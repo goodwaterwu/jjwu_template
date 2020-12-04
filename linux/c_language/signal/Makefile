@@ -1,13 +1,11 @@
-include Makefile.in
+include ../Makefile.in
 
 SUBDIRS = \
-	pthread \
-	signal \
-	timer \
-	message_queue \
-	daemon \
-	syslog \
-	semaphore
+	signal_install_handler \
+	signal_send_by_kill \
+	signal_send_by_raise \
+	signal_set_mask \
+	sigaction_install_handler
 
 .PHONY: all
 

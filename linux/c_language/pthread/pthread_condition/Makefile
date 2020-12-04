@@ -39,12 +39,12 @@ uninstall:
 	$(eval DESTDIR := $(shell cat .install))
 	@for f in $(EXECFILE); \
 	do \
-		rm -f $(DESTDIR)/usr/local/sbin/$$f; \
+		@rm -f $(DESTDIR)/usr/local/sbin/$$f; \
 	done
 	$(info package uninstalled)
 
 .PHONY: clean
 
 clean:
-	@rm $(OBJS) $(EXECFILE)
+	@rm -f $(OBJS) $(EXECFILE)
 	$(info package cleaned)

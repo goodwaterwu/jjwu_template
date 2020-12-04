@@ -1,13 +1,13 @@
-include Makefile.in
+include ../Makefile.in
 
 SUBDIRS = \
-	pthread \
-	signal \
-	timer \
-	message_queue \
-	daemon \
-	syslog \
-	semaphore
+	setitimer \
+	alarm \
+	posix_timer_signal \
+	posix_timer_abstime \
+	posix_timer_thread \
+	nanosleep \
+	clock_nanosleep
 
 .PHONY: all
 
