@@ -32,8 +32,9 @@ static void notify_thread(union sigval sv)
 	if (mq_getattr(*mqd, &attr) == -1)
 		error_en("Get attribute failed");
 
+	setup_notify(mqd);
+
 	while (1) {
-		setup_notify(mqd);
 		memset(buf, 0, sizeof(buf));
 		while (mq_receive(*mqd, buf, (size_t)attr.mq_msgsize, &prio) >= 0)
 			printf("Received message: %s\n", buf);
