@@ -57,7 +57,7 @@ static void notify_thread(union sigval sv)
 static void setup_notify(mqd_t *mqd)
 {
 	struct sigevent event = {
-		.sigev_notify =  SIGEV_THREAD,
+		.sigev_notify = SIGEV_THREAD,
 		.sigev_notify_function = notify_thread,
 		.sigev_notify_attributes = NULL,
 		.sigev_value.sival_ptr = mqd
