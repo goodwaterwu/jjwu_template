@@ -61,7 +61,6 @@ int main(int argc, char *argv[])
 		ret = pthread_join(t[i], &result);
 		if (ret)
 			error_en(ret, "Thread join failed");
-
 	}
 
 	printf("global_variable = %d\n", global_variable);
