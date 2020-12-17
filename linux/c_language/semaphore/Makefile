@@ -4,7 +4,11 @@ SUBDIRS = \
 	semaphore_create \
 	semaphore_create_private \
 	semaphore_binary \
-	semaphore_attribute
+	semaphore_attribute \
+	posix_semaphore_create \
+	posix_semaphore_op \
+	posix_unnamed_semaphore_create \
+	posix_unnamed_semaphore_op
 
 .PHONY: all
 
