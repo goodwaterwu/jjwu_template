@@ -6,7 +6,8 @@ SUBDIRS = \
 	multi_pthread \
 	pthread_attribute \
 	pthread_mutex \
-	pthread_condition
+	pthread_condition \
+	pthread_sigqueue
 
 .PHONY: all
 
