@@ -5,7 +5,8 @@ SUBDIRS = \
 	signal_send_by_kill \
 	signal_send_by_raise \
 	signal_set_mask \
-	sigaction_install_handler
+	sigaction_install_handler \
+	sigaction_sigqueue
 
 .PHONY: all
 
