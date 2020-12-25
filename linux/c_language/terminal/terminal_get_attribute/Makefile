@@ -1,16 +1,16 @@
 include ../../Makefile.in
 
-EXECFILE = terminal_tcgetattr
+EXECFILE = terminal_get_attribute
 
 OBJS = $(EXECFILE).o
 
 .PHONY: all
 
-all: terminal_tcgetattr
+all: terminal_get_attribute
 
-.PHONY: terminal_tcgetattr
+.PHONY: terminal_get_attribute
 
-terminal_tcgetattr: $(OBJS)
+terminal_get_attribute: $(OBJS)
 	@$(CC) $(OBJS) $(CFLAGS) $(LDFLAGS) $(LIBS) -o $@
 	$(info package compiled)
 

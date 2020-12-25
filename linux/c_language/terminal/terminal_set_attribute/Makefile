@@ -1,16 +1,16 @@
 include ../../Makefile.in
 
-EXECFILE = terminal_tcsetattr
+EXECFILE = terminal_set_attribute
 
 OBJS = $(EXECFILE).o
 
 .PHONY: all
 
-all: terminal_tcsetattr
+all: terminal_set_attribute
 
-.PHONY: terminal_tcsetattr
+.PHONY: terminal_set_attribute
 
-terminal_tcsetattr: $(OBJS)
+terminal_set_attribute: $(OBJS)
 	@$(CC) $(OBJS) $(CFLAGS) $(LDFLAGS) $(LIBS) -o $@
 	$(info package compiled)
 
