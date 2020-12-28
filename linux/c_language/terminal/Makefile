@@ -1,10 +1,12 @@
 include ../Makefile.in
 
 SUBDIRS = \
-	terminal_tcgetattr \
-	terminal_tcsetattr \
+	terminal_set_attribute \
+	terminal_get_attribute \
 	terminal_cbreak_mode \
-	terminal_raw_mode
+	terminal_raw_mode \
+	terminal_linespeed \
+	terminal_window_size
 
 .PHONY: all
 
