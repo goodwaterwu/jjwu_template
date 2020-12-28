@@ -6,7 +6,8 @@ SUBDIRS = \
 	terminal_cbreak_mode \
 	terminal_raw_mode \
 	terminal_linespeed \
-	terminal_window_size
+	terminal_window_size \
+	terminal_uart_8n1
 
 .PHONY: all
 
