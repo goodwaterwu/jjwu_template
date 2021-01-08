@@ -132,6 +132,9 @@ int main(int argc, char *argv[])
 			continue;
 	}
 
+	if (tcsetattr(fd, TCSAFLUSH, &old_tm) == -1)
+		error_log("Set terminal attribute failed");
+
 	close(fd);
 	fd = 0;
 

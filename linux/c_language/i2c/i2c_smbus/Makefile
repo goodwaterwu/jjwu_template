@@ -1,10 +1,19 @@
-include ../../Makefile.in
+CC = $(CROSS_COMPILE)gcc
+CPP = $(CROSS_COMPILE)gcc -E
+AR = $(CROSS_COMPILE)ar
+LD = $(CROSS_COMPILE)ld
+NM = $(CROSS_COMPILE)nm
+STRIP = $(CROSS_COMPILE)strip
+
+CFLAGS += $(EXTRA_CFLAGS)
+LDFLAGS += $(EXTRA_LDFLAGS)
+LIBS += $(EXTRA_LIBS)
 
 EXECFILE = i2c_smbus
 
 OBJS = $(EXECFILE).o
 
-LDFLAGS += -li2c
+LDFLAGS += -l:libi2c.a
 
 .PHONY: all
 

@@ -1,4 +1,13 @@
-include ../../Makefile.in
+CC = $(CROSS_COMPILE)gcc
+CPP = $(CROSS_COMPILE)gcc -E
+AR = $(CROSS_COMPILE)ar
+LD = $(CROSS_COMPILE)ld
+NM = $(CROSS_COMPILE)nm
+STRIP = $(CROSS_COMPILE)strip
+
+CFLAGS += $(EXTRA_CFLAGS)
+LDFLAGS += $(EXTRA_LDFLAGS)
+LIBS += $(EXTRA_LIBS)
 
 SENDFILE = posix_message_queue_notify_signal_client
 RECVFILE = posix_message_queue_notify_signal_server

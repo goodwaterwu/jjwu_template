@@ -7,7 +7,10 @@ SUBDIRS = \
 	message_queue \
 	daemon \
 	syslog \
-	semaphore
+	semaphore \
+	terminal \
+	i2c \
+	mtd
 
 .PHONY: all
 
@@ -15,7 +18,7 @@ all:
 	$(info compile packages)
 	@for dir in $(SUBDIRS); \
 	do \
-		$(MAKE) -C $$dir; \
+		$(MAKE) -C $$dir EXTRA_CFLAGS=$(EXTRA_CFLAGS) EXTRA_LDFLAGS=$(EXTRA_LDFLAGS) EXTRA_LIBS=$(EXTRA_LIBS); \
 	done
 
 .PHONY: strip
@@ -33,7 +36,7 @@ libs:
 	$(info make libraries)
 	@for dir in $(SUBDIRS); \
 	do \
-		$(MAKE) -C $$dir libs; \
+		$(MAKE) -C $$dir libs EXTRA_CFLAGS=$(EXTRA_CFLAGS) EXTRA_LDFLAGS=$(EXTRA_LDFLAGS) EXTRA_LIBS=$(EXTRA_LIBS); \
 	done
 
 
@@ -43,7 +46,7 @@ install:
 	$(info install packages)
 	@for dir in $(SUBDIRS); \
 	do \
-		$(MAKE) -C $$dir install; \
+		$(MAKE) -C $$dir install DESTDIR=$(DESTDIR); \
 	done
 
 .PHONY: uninstall
@@ -52,7 +55,7 @@ uninstall:
 	$(info uninstall packages)
 	@for dir in $(SUBDIRS); \
 	do \
-		$(MAKE) -C $$dir uninstall; \
+		$(MAKE) -C $$dir uninstall DESTDIR=$(DESTDIR); \
 	done
 
 .PHONY: clean
