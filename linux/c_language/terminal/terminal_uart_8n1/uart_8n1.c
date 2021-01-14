@@ -89,8 +89,7 @@ int main(int argc, char *argv[])
 
 	tm = old_tm;
 
-	cfsetispeed(&tm, SPEED);
-	cfsetospeed(&tm, SPEED);
+	cfsetspeed(&tm, SPEED);
 
 	tm.c_cc[VMIN] = 1;
 	tm.c_cc[VTIME] = 0;
